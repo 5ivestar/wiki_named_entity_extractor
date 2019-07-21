@@ -4,6 +4,7 @@ from collections import defaultdict
 import re
 import logging
 from janome.tokenizer import Tokenizer
+import sys
 
 with_category=re.compile("[^#]*#[^#]+")
 good_noun=["一般","固有名詞"]
@@ -89,6 +90,4 @@ def load(wikijson):
     return extractor
 
 if __name__=="__main__":
-    extractor=load("result.json")
-    print(extractor.extract("ラ・サール高校は鹿児島県にある高校です"))
-    print(extractor.extract("マツコ・デラックスと有吉の番組は面白い"))
+    extractor=load(sys.argv[1],sys.argv[2])

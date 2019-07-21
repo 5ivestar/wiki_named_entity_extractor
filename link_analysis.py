@@ -6,8 +6,8 @@ from collections import defaultdict, Counter
 
 from bs4 import BeautifulSoup
 
-if len(sys.argv)<2:
-    print("usage: $python {} <extracted_directory>".format(sys.argv[0]))
+if len(sys.argv)<3:
+    print("usage: $python {} <extracted_directory> <output_file>".format(sys.argv[0]))
     exit(1)
 
 d = defaultdict(Counter)
@@ -23,5 +23,5 @@ for file in files:
             text = link.text
             d[href][text] += 1
 
-with open('linkfreq.json', 'w',encoding="utf-8") as f:
+with open(sys.argv[2], 'w',encoding="utf-8") as f:
     json.dump(d, f, ensure_ascii=False)
