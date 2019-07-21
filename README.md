@@ -13,4 +13,6 @@ Procedure
 python link_analysis.py <WikiExtractor's output dir> <output file name>
 ```
 4. run the extractor
+```
 python extractor.py <output file name> "text to extract entities"
+```
