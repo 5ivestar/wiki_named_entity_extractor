@@ -90,4 +90,5 @@ def load(wikijson):
     return extractor
 
 if __name__=="__main__":
-    extractor=load(sys.argv[1],sys.argv[2])
+    extractor=load(sys.argv[1])
+    print(extractor.extract(sys.argv[2]))
